@@ -1,6 +1,7 @@
 // import React from 'react';
 
 import Banner from "./Banner";
+import Discount from "./Discount";
 
 const Home = () => {
   return (
@@ -8,6 +9,8 @@ const Home = () => {
       this is home
       {/* banner section */}
       <Banner></Banner>
+      {/* discount  */}
+      <Discount></Discount>
     </div>
   );
 };
