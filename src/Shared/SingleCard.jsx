@@ -20,7 +20,7 @@ const SingleCard = ({ product }) => {
       <p>
         {description.slice(0, 80)} <span>...</span>
       </p>
-      {/* <p>{ratings}</p> */}
+
       <Rating
         className="h-[36px] w-[30px]"
         style={{ maxWidth: 80 }}

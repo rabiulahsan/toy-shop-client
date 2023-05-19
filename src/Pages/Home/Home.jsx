@@ -2,6 +2,7 @@
 
 import Banner from "./Banner";
 import Discount from "./Discount";
+import Trending from "./Trending";
 
 const Home = () => {
   return (
@@ -11,6 +12,8 @@ const Home = () => {
       <Banner></Banner>
       {/* discount  */}
       <Discount></Discount>
+      {/* trending section  */}
+      <Trending></Trending>
     </div>
   );
 };

@@ -8,9 +8,7 @@
 .card-btn {
   @apply my-3 text-lg btn-hover py-2 px-4 bg-transparent;
 }
-/* .card-btn {
-  @apply my-6   mx-auto   ;
-} */
+
 .btn-hover {
   @apply hover:py-2 hover:px-4 hover:bg-white hover:text-blue-500 hover:rounded-md hover:text-center  hover:font-semibold;
 }
