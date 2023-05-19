@@ -13,7 +13,7 @@ const Banner = () => {
           A place of superheroes, where you can buy your favoutite superheroes
           at a best deal in your area...
         </p>
-        <button className="text-white bg-blue-500 px-4 py-2 font-semibold">
+        <button className="text-white bg-blue-500 px-4 py-2 font-semibold text-lg hover:bg-blue-700">
           Shop Now
         </button>
       </div>
