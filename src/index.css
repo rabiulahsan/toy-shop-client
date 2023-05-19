@@ -8,7 +8,15 @@
 .card-btn {
   @apply my-3 text-lg btn-hover py-2 px-4 bg-transparent;
 }
-
+.button-style {
+  @apply text-white bg-blue-500 px-4 py-2 font-semibold text-lg hover:bg-blue-700 rounded;
+}
 .btn-hover {
   @apply hover:py-2 hover:px-4 hover:bg-white hover:text-blue-500 hover:rounded-md hover:text-center  hover:font-semibold;
+}
+.active-style {
+  @apply text-blue-500;
+}
+.nav-option-style {
+  @apply hover:text-blue-500 my-2 py-3 border-b border-white lg:border-none;
 }

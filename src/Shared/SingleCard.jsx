@@ -27,7 +27,7 @@ const SingleCard = ({ product }) => {
         value={ratings}
         readOnly={true}
       />
-      <p className="mt-[-10px]">{price}</p>
+      <p className="mt-[-10px]">$ {price}</p>
       <div className="flex justify-center items-center">
         <button className="card-btn">
           <span className="flex gap-2 items-center">

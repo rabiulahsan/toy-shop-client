@@ -1,7 +1,6 @@
 // import React from 'react';
 
 const Banner = () => {
-  // Hero&apos;s House
   return (
     <div className="flex   items-center mt-[4%] mb-[5%]  p-[5%] ">
       <div className="w-[40%]">
@@ -13,9 +12,7 @@ const Banner = () => {
           A place of superheroes, where you can buy your favoutite superheroes
           at a best deal in your area...
         </p>
-        <button className="text-white bg-blue-500 px-4 py-2 font-semibold text-lg hover:bg-blue-700">
-          Shop Now
-        </button>
+        <button className="button-style">Shop Now</button>
       </div>
       <div className="w-1/2 flex relative">
         <img
