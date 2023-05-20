@@ -2,7 +2,7 @@
 
 import Banner from "./Banner";
 import Discount from "./Discount";
-import Footer from "./Footer";
+
 import Trending from "./Trending";
 import Service from "./Service";
 
@@ -17,8 +17,6 @@ const Home = () => {
       <Trending></Trending>
       {/* service section  */}
       <Service></Service>
-      {/* footer section  */}
-      <Footer></Footer>
     </div>
   );
 };

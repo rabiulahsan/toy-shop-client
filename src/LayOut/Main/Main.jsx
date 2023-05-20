@@ -1,4 +1,5 @@
 // import React from 'react';
+import Footer from "../../Shared/Footer";
 import Navbar from "../../Shared/Navbar/Navbar";
 import "./Main.css";
 
@@ -9,6 +10,7 @@ const Main = () => {
     <>
       <Navbar></Navbar>
       <Outlet></Outlet>
+      <Footer></Footer>
     </>
   );
 };

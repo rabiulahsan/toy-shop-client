@@ -15,11 +15,11 @@ const Service = () => {
         </div>
         <div className="border border-white py-8 px-10 text-center rounded-lg card-hover">
           <p className="text-3xl font-bold my-2">5k+</p>
-          <p className="text-lg font-semibold">Customes</p>
+          <p className="text-lg font-semibold">Customers</p>
         </div>
         <div className="border border-white py-8 px-10 text-center rounded-lg card-hover">
           <p className="text-3xl font-bold my-2">10+</p>
-          <p className="text-lg font-semibold">CAtegory</p>
+          <p className="text-lg font-semibold">Category</p>
         </div>
       </div>
     </>
