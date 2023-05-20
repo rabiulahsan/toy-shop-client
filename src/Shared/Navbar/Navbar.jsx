@@ -45,7 +45,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="nav-btn hidden lg:block">
-        <button className="all-btn">Start Applying</button>
+        <img className="h-[40px] inline-block mr-5" src="" alt="profile" />
+        <Link to="/login">
+          <button className="button-style mr-5">Login</button>
+        </Link>
+
+        <button className="button-style">Logout</button>
       </div>
 
       {/* for responsive  */}
