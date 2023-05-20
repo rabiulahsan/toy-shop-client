@@ -24,7 +24,7 @@ const Signup = () => {
         const user = result.user;
         console.log(user);
         profileUpdate(result.user, name);
-        navigate("/");
+        navigate("/login");
         logOut()
           .then()
           .catch((error) => console.log(error));
@@ -47,8 +47,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex justify-center items-center bg-[#ebeaf8] h-[710px]">
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/5 h-[583px] ">
+    <div className="flex justify-center items-center bg-[#07051d] h-[710px]">
+      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/4  ">
         <form onSubmit={handleSignUp} className="">
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -88,12 +88,8 @@ const Signup = () => {
             <p>{signUpError}</p>
           </div>
 
-          <div className="cursor-pointer text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-            <input
-              className="btn btn-primary cursor-pointer"
-              type="submit"
-              value="Signup"
-            />
+          <div className="cursor-pointer text-center bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded focus:outline-none focus:shadow-outline">
+            <input className="" type="submit" value="Signup" />
           </div>
         </form>
         <p className="text-center text-gray-400 my-5">or</p>
@@ -103,16 +99,12 @@ const Signup = () => {
 
         <p className="flex flex-col text-center text-gray-500">
           Already have an account?
-          <Link to={"/"}>
+          <Link to={"/login"}>
             <span className="text-blue-800 font-semibold hover:underline">
               Login
             </span>
           </Link>
         </p>
-      </div>
-      <div className="w-1/5 bg-blue-900 mb-4 h-[583px] flex flex-col justify-center items-center text-white text-center">
-        <img src="/signup.svg" alt="" />
-        <p className="text-xl font-semibold">Sign Up</p>
       </div>
     </div>
   );

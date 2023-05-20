@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { AuthContext } from "../../../Provider/AuthProvider";
+
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const GoogleSignIn = () => {
   const { user, googleLogin } = useContext(AuthContext);
@@ -17,7 +18,7 @@ const GoogleSignIn = () => {
         .then((result) => {
           const user = result.user;
           console.log(user);
-          navigate("/home");
+          navigate("/");
         })
         .catch((error) => {
           console.error(error);

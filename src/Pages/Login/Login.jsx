@@ -1,8 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import  { useContext, useState } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
+import { useContext, useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
-import GoogleSignIn from "../Shared/GoogleSignIn/GoogleSignIn";
+import { AuthContext } from "../../Providers/AuthProvider";
+import GoogleSignIn from "../Signup/GoogleSignIn";
+
 const Login = () => {
   const { user, signIn } = useContext(AuthContext);
   const [logInError, setLogInError] = useState("");
@@ -35,11 +37,8 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center bg-[#ebeaf8] h-[710px]">
-      <div className="w-1/5 bg-blue-900 mb-4 h-[516px] flex justify-center items-center text-white text-center">
-        <img src="/login.svg" alt="" />
-      </div>
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/5 h-[516px]">
+    <div className="flex justify-center items-center bg-[#07051d] h-[710px]">
+      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/4">
         <form onSubmit={handleLogin} className=" ">
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -68,12 +67,8 @@ const Login = () => {
             <p>{logInError}</p>
           </div>
 
-          <div className="cursor-pointer text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-            <input
-              className=" cursor-pointer btn btn-primary"
-              type="submit"
-              value="Login"
-            />
+          <div className="cursor-pointer text-center bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded focus:outline-none focus:shadow-outline">
+            <input className=" " type="submit" value="Login" />
           </div>
         </form>
         <p className="text-center text-gray-400 my-5">or</p>
