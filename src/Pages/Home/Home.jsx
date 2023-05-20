@@ -7,7 +7,6 @@ import Trending from "./Trending";
 const Home = () => {
   return (
     <div className="px-[8%]">
-      this is home
       {/* banner section */}
       <Banner></Banner>
       {/* discount  */}

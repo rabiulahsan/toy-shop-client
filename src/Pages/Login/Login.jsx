@@ -10,9 +10,6 @@ const Login = () => {
   const [logInError, setLogInError] = useState("");
 
   const navigate = useNavigate();
-  if (user) {
-    navigate("/home");
-  }
 
   const handleLogin = (e) => {
     e.preventDefault();

@@ -2,8 +2,8 @@
 
 const Banner = () => {
   return (
-    <div className="flex   items-center mt-[4%] mb-[5%]  p-[5%] ">
-      <div className="w-[40%]">
+    <div className="flex flex-col-reverse lg:flex-row  items-center mt-[4%] mb-[5%]  p-[5%] ">
+      <div className="lg:w-[40%]">
         <p className="text-6xl font-bolder my-5">
           {" "}
           <span className="text-gray-500 text-5xl">Find your</span> Superheroes
@@ -14,14 +14,14 @@ const Banner = () => {
         </p>
         <button className="button-style">Shop Now</button>
       </div>
-      <div className="w-1/2 flex relative">
+      <div className="lg:w-1/2 flex relative">
         <img
-          className="h-[400px] mx-auto z-10"
+          className="h-[300px] lg:h-[400px]  lg:mx-auto z-10"
           src="https://www.pngmart.com/files/16/Infinity-War-Iron-Man-PNG-Photos.png"
           alt=""
         />
         <img
-          className="h-[400px] mx-auto absolute left-[45%] "
+          className="h-[300px] lg:h-[400px] mx-auto absolute left-[60%] lg:left-[45%] "
           src="https://www.pngmart.com/files/22/Captain-Jack-Sparrow-PNG.png"
           alt=""
         />
