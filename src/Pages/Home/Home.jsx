@@ -4,6 +4,7 @@ import Banner from "./Banner";
 import Discount from "./Discount";
 import Footer from "./Footer";
 import Trending from "./Trending";
+import Service from "./Service";
 
 const Home = () => {
   return (
@@ -14,6 +15,8 @@ const Home = () => {
       <Discount></Discount>
       {/* trending section  */}
       <Trending></Trending>
+      {/* service section  */}
+      <Service></Service>
       {/* footer section  */}
       <Footer></Footer>
     </div>
