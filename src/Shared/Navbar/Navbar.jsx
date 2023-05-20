@@ -51,7 +51,7 @@ const Navbar = () => {
             <ActiveLink to="/a">Add Toy</ActiveLink>
           </li>
           <li className="nav-option-style">
-            <ActiveLink to="/a">Blog</ActiveLink>
+            <ActiveLink to="/blogs">Blog</ActiveLink>
           </li>
         </ul>
       </div>
@@ -101,7 +101,7 @@ const Navbar = () => {
             <ActiveLink to="/a">Add Toy</ActiveLink>
           </li>
           <li className="nav-option-style">
-            <ActiveLink to="/a">Blog</ActiveLink>
+            <ActiveLink to="/blogs">Blog</ActiveLink>
           </li>
         </ul>
         <div className="  lg:hidden my-[3%]">
