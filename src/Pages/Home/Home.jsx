@@ -2,6 +2,7 @@
 
 import Banner from "./Banner";
 import Discount from "./Discount";
+import Footer from "./Footer";
 import Trending from "./Trending";
 
 const Home = () => {
@@ -13,6 +14,8 @@ const Home = () => {
       <Discount></Discount>
       {/* trending section  */}
       <Trending></Trending>
+      {/* footer section  */}
+      <Footer></Footer>
     </div>
   );
 };
