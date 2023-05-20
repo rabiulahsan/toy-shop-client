@@ -42,7 +42,7 @@ const Navbar = () => {
             <ActiveLink to="/">Home</ActiveLink>
           </li>
           <li className="nav-option-style">
-            <ActiveLink to="/a">All Toys</ActiveLink>
+            <ActiveLink to="/alltoys">All Toys</ActiveLink>
           </li>
           <li className="nav-option-style">
             <ActiveLink to="/a">My Toys</ActiveLink>
@@ -92,7 +92,7 @@ const Navbar = () => {
             <ActiveLink to="/">Home</ActiveLink>
           </li>
           <li className="nav-option-style">
-            <ActiveLink to="/a">All Toys</ActiveLink>
+            <ActiveLink to="/alltoys">All Toys</ActiveLink>
           </li>
           <li className="nav-option-style">
             <ActiveLink to="/a">My Toys</ActiveLink>
