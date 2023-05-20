@@ -21,7 +21,7 @@ const Trending = () => {
         Toys in <span className="text-white font-bold">Trending</span>
       </p>
 
-      <div className="grid grid-cols-3 gap-10 px-[5%]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-[5%]">
         {discountProducts.map((product) => (
           <SingleCard key={product._id} product={product}></SingleCard>
         ))}

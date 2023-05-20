@@ -25,7 +25,7 @@ const AllToy = () => {
           <span className="text-white font-bold">All Toys</span>
         </p>
 
-        <div className="grid grid-cols-3 gap-10 px-[5%] mb-[5%]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-[5%] mb-[5%]">
           {seeAll
             ? products.map((product) => (
                 <SingleCard key={product._id} product={product}></SingleCard>
