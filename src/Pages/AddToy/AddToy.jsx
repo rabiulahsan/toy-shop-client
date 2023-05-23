@@ -34,7 +34,7 @@ const AddToy = () => {
     const toyDetails = {
       sellerName: sellerName,
       title: toyName,
-      sellerEmail: sellerEmail,
+      email: sellerEmail,
       photoURL: photoURL,
       quantity: quantity,
       price: price,
