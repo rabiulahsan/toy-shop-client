@@ -1,15 +1,59 @@
 // import React from 'react';
 
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+
 const AddToy = () => {
+  const { user } = useContext(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const textarea = form.textarea.value;
+    const sellerName = form.name.value;
+    const toyName = form.toyname.value;
+    const sellerEmail = form.email.value;
+    const photoURL = form.photoURL.value;
+    const quantity = form.quantity.value;
+    const price = form.price.value;
     const category = form.category.value;
-    const name = form.name.value;
-    console.log(textarea, name, category);
-    console.log(e);
-    console.log(e.target);
+    const rating = form.rating.value;
+    const description = form.textarea.value;
+    // console.log(
+    //   sellerName,
+    //   toyName,
+    //   sellerEmail,
+    //   photoURL,
+    //   quantity,
+    //   price,
+    //   rating,
+    //   category,
+    //   description
+    // );
+
+    console.log(user.email);
+    const toyDetails = {
+      sellerName: sellerName,
+      title: toyName,
+      sellerEmail: sellerEmail,
+      photoURL: photoURL,
+      quantity: quantity,
+      price: price,
+      ratings: rating,
+      category: category,
+      description: description,
+    };
+
+    fetch(`https://toy-shop-server-xi.vercel.app/`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(toyDetails),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
   return (
     <div className="my-[5%] px-[8%]">
@@ -26,6 +70,7 @@ const AddToy = () => {
               name="toyname"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
+              defaultValue=""
             />
 
             {/* product photo  */}
@@ -50,6 +95,7 @@ const AddToy = () => {
               name="name"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs "
+              defaultValue={user?.displayName}
             />
 
             {/* seller email  */}
@@ -62,13 +108,14 @@ const AddToy = () => {
               name="email"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs "
+              defaultValue={user?.email}
             />
           </div>
           <div className="form-control w-1/2 max-w-xs">
             {/* category */}
             <label className="label mt-8">
               <span className="label-text text-white">
-                Select Produc Category
+                Select Product Category
               </span>
             </label>
             <div className="input-group">
@@ -83,9 +130,7 @@ const AddToy = () => {
                 <option value="Marvel">Marvel</option>
                 <option value="DC">DC</option>
                 <option value="Harry Potter">Harry Potter</option>
-                <option value="Pirates of the Carrebean">
-                  Pirates of the Carrebean
-                </option>
+                <option value="Pirates ">Pirates of the Carrebean</option>
                 <option value="Transformer">Transformer</option>
               </select>
             </div>
@@ -118,7 +163,7 @@ const AddToy = () => {
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
-                <option value="5">5</option>
+                <option value="4">4</option>
                 <option value="5">5</option>
               </select>
             </div>

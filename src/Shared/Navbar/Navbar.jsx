@@ -45,7 +45,7 @@ const Navbar = () => {
             <ActiveLink to="/alltoys">All Toys</ActiveLink>
           </li>
           <li className="nav-option-style">
-            <ActiveLink to="/a">My Toys</ActiveLink>
+            <ActiveLink to="/mytoys">My Toys</ActiveLink>
           </li>
           <li className="nav-option-style">
             <ActiveLink to="/addtoy">Add Toy</ActiveLink>
@@ -95,7 +95,7 @@ const Navbar = () => {
             <ActiveLink to="/alltoys">All Toys</ActiveLink>
           </li>
           <li className="nav-option-style">
-            <ActiveLink to="/a">My Toys</ActiveLink>
+            <ActiveLink to="/mytoys">My Toys</ActiveLink>
           </li>
           <li className="nav-option-style">
             <ActiveLink to="/addtoy">Add Toy</ActiveLink>

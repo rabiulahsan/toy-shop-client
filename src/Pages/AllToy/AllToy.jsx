@@ -8,7 +8,7 @@ const AllToy = () => {
   const [seeAll, setSeeAll] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/")
+    fetch("https://toy-shop-server-xi.vercel.app/")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

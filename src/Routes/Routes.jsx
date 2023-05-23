@@ -8,6 +8,7 @@ import AllToy from "../Pages/AllToy/AllToy";
 import ToyDetails from "../Pages/ToyDetails/ToyDetails";
 import Blog from "../Pages/Blog/Blog";
 import AddToy from "../Pages/AddToy/AddToy";
+import MyToys from "../Pages/MyToys/MyToys";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,8 @@ const router = createBrowserRouter([
       {
         path: "/:id",
         element: <ToyDetails></ToyDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://toy-shop-server-xi.vercel.app/${params.id}`),
       },
 
       {
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/addtoy",
         element: <AddToy></AddToy>,
+      },
+      {
+        path: "/mytoys",
+        element: <MyToys></MyToys>,
       },
     ],
   },
