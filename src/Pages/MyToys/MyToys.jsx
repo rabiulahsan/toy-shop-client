@@ -6,36 +6,38 @@ import MyToysRow from "./MyToysRow";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
-
+  const [alltoy, setAlltoy] = useState([]);
   useEffect(() => {
     // fetch(`http://localhost:5000/mytoys?email=${user?.email}`)
     fetch("http://localhost:5000/")
       .then((res) => res.json())
-      .then((data) => setMyToys(data));
+      .then((data) => setAlltoy(data));
+    const remaining = alltoy.filter((toy) => toy?.email === user?.email);
+    setMyToys(remaining);
   }, []);
 
   //update function
-  const handleUpdate = (id) => {
-    // fetch(`http://localhost:5000/bookings/${id}`, {
-    //   method: "PATCH",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify({ status: "confirm" }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     if (data.modifiedCount > 0) {
-    //       // update state
-    //       const remaining = bookings.filter((booking) => booking._id !== id);
-    //       const updated = bookings.find((booking) => booking._id === id);
-    //       updated.status = "confirm";
-    //       const newBookings = [updated, ...remaining];
-    //       setBookings(newBookings);
-    //     }
-    //   });
-  };
+  // const handleUpdate = (id) => {
+  // fetch(`http://localhost:5000/bookings/${id}`, {
+  //   method: "PATCH",
+  //   headers: {
+  //     "content-type": "application/json",
+  //   },
+  //   body: JSON.stringify({ status: "confirm" }),
+  // })
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     console.log(data);
+  //     if (data.modifiedCount > 0) {
+  //       // update state
+  //       const remaining = bookings.filter((booking) => booking._id !== id);
+  //       const updated = bookings.find((booking) => booking._id === id);
+  //       updated.status = "confirm";
+  //       const newBookings = [updated, ...remaining];
+  //       setBookings(newBookings);
+  //     }
+  //   });
+  // };
 
   //delete function
   const handleDelete = (id) => {
@@ -49,7 +51,7 @@ const MyToys = () => {
           console.log(data);
           if (data.deletedCount > 0) {
             alert("deleted successful");
-            const remaining = myToys.filter((booking) => booking._id !== id);
+            const remaining = myToys.filter((toy) => toy._id !== id);
             setMyToys(remaining);
           }
         });
@@ -77,7 +79,7 @@ const MyToys = () => {
               key={toy._id}
               toy={toy}
               handleDelete={handleDelete}
-              handleUpdate={handleUpdate}
+              // handleUpdate={handleUpdate}
             ></MyToysRow>
           ))}
         </tbody>

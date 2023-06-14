@@ -5,6 +5,7 @@ import Discount from "./Discount";
 
 import Trending from "./Trending";
 import Service from "./Service";
+import ToyTabs from "./ToyTabs";
 
 const Home = () => {
   return (
@@ -15,6 +16,8 @@ const Home = () => {
       <Discount></Discount>
       {/* trending section  */}
       <Trending></Trending>
+      {/* alltoy section in tabs */}
+      <ToyTabs></ToyTabs>
       {/* service section  */}
       <Service></Service>
     </div>
