@@ -6,7 +6,8 @@ import { useContext } from "react";
 
 const UpdateToy = () => {
   const loadedData = useLoaderData();
-  const { title, photoURL, ratings, price, description, quantity } = loadedData;
+  const { _id, title, photoURL, ratings, price, description, quantity } =
+    loadedData;
   console.log(loadedData);
   const { user } = useContext(AuthContext);
 
@@ -40,8 +41,8 @@ const UpdateToy = () => {
       description: description,
     };
 
-    fetch(`https://toy-shop-server-xi.vercel.app/`, {
-      method: "POST",
+    fetch(`http://localhost:5000/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -50,14 +51,14 @@ const UpdateToy = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        form.reset();
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "A toy has been added",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Toy Updated Successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+        }
       });
   };
   return (
@@ -75,7 +76,7 @@ const UpdateToy = () => {
               name="toyname"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
-              value={title}
+              defaultValue={title}
             />
 
             {/* product photo  */}
@@ -88,7 +89,7 @@ const UpdateToy = () => {
               name="photoURL"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs "
-              value={photoURL}
+              defaultValue={photoURL}
             />
 
             {/* seller name */}
@@ -102,7 +103,7 @@ const UpdateToy = () => {
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs "
               readOnly
-              value={user?.displayName}
+              defaultValue={user?.displayName}
             />
 
             {/* seller email  */}
@@ -116,7 +117,7 @@ const UpdateToy = () => {
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs "
               readOnly
-              value={user?.email}
+              defaultValue={user?.email}
             />
           </div>
           <div className="form-control w-1/2 max-w-xs">
@@ -153,7 +154,7 @@ const UpdateToy = () => {
               name="price"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs "
-              value={price}
+              defaultValue={price}
             />
 
             {/* rating  */}
@@ -186,7 +187,7 @@ const UpdateToy = () => {
               name="quantity"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs "
-              value={quantity}
+              defaultValue={quantity}
             />
           </div>
         </div>
@@ -198,6 +199,7 @@ const UpdateToy = () => {
           className="textarea textarea-bordered w-3/4 mx-[12.5%] text-black"
           placeholder="Description"
           name="textarea"
+          defaultValue={description}
         ></textarea>
         <div className="flex justify-center items-center my-[5%]">
           <input
