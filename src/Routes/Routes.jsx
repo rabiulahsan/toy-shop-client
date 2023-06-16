@@ -11,6 +11,7 @@ import AddToy from "../Pages/AddToy/AddToy";
 import MyToys from "../Pages/MyToys/MyToys";
 import UpdateToy from "../Pages/UpdateToy/UpdateToy";
 import ErrorElement from "../Shared/ErrorElement/ErrorElement";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/:id",
-        element: <ToyDetails></ToyDetails>,
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`https://toy-shop-server-xi.vercel.app/${params.id}`),
       },
@@ -38,18 +43,26 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "/addtoy",
-        element: <AddToy></AddToy>,
+        path: "addtoy",
+        element: (
+          <PrivateRoute>
+            <AddToy></AddToy>
+          </PrivateRoute>
+        ),
       },
       {
-        path: "/mytoys",
-        element: <MyToys></MyToys>,
+        path: "mytoys",
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
       },
       {
-        path: "/update/:id",
+        path: "update/:id",
         element: <UpdateToy></UpdateToy>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/update/${params.id}`),
+          fetch(`https://toy-shop-server-xi.vercel.app/${params.id}`),
       },
     ],
   },

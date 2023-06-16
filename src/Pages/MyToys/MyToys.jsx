@@ -14,7 +14,7 @@ const MyToys = () => {
       .then((data) => setAlltoy(data));
     const remaining = alltoy.filter((toy) => toy?.email === user?.email);
     setMyToys(remaining);
-  }, [user]);
+  }, [user, alltoy]);
 
   //update function
   // const handleUpdate = (id) => {

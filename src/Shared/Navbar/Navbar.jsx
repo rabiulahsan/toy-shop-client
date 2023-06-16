@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ActiveLink from "../ActiveLink/ActiveLink";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
 import { useContext } from "react";
@@ -10,13 +10,9 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const { logOut, user } = useContext(AuthContext);
 
-  const navigate = useNavigate();
-
   console.log(user);
   const handleLogOut = () => {
-    logOut()
-      .then(navigate("/login"))
-      .catch((error) => console.log(error));
+    logOut().catch((error) => console.log(error));
   };
   return (
     <div className=" z-20 sticky  top-[-40px] lg:top-[-28px]  flex justify-between items-center pt-10 pb-4 lg:pb-6  px-[8%] bg-black ">
@@ -56,28 +52,31 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="nav-btn hidden lg:block">
-        {/* <img
-          className="h-[50px] inline-block mr-5 "
-          src={user.photoURL}
-          alt="profile"
-          title={user.displayName}
-        />
         {user ? (
-          <button className="button-style" onClick={handleLogOut}>
-            Logout
-          </button>
+          <>
+            <button className="button-style" onClick={handleLogOut}>
+              Logout
+            </button>
+
+            <img
+              className="h-[50px] inline-block ml-5 "
+              src={user?.photoURL}
+              alt="profile"
+              title={user?.displayName}
+            />
+          </>
         ) : (
           <Link to="/login">
             <button className="button-style mr-5">Login</button>
           </Link>
-        )} */}
+        )}
 
-        <Link to="/login">
+        {/* <Link to="/login">
           <button className="button-style mr-5">Login</button>
         </Link>
         <button className="button-style" onClick={handleLogOut}>
           Logout
-        </button>
+        </button> */}
       </div>
 
       {/* for responsive  */}
@@ -105,7 +104,15 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="  lg:hidden my-[3%]">
-          <button className="button-style">Log Out</button>
+          {user ? (
+            <button className="button-style" onClick={handleLogOut}>
+              Logout
+            </button>
+          ) : (
+            <Link to="/login">
+              <button className="button-style my-5">Login</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
