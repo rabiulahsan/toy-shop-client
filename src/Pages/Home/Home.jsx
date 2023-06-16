@@ -6,7 +6,7 @@ import Discount from "./Discount";
 import Trending from "./Trending";
 import Service from "./Service";
 
-// import ToyTabs from "./ToyTabs";
+import ToyTabs from "./ToyTabs";
 
 const Home = () => {
   return (
@@ -21,7 +21,7 @@ const Home = () => {
       <Trending></Trending>
 
       {/* alltoy section in tabs */}
-      {/* <ToyTabs></ToyTabs> */}
+      <ToyTabs></ToyTabs>
 
       {/* service section  */}
       <Service></Service>

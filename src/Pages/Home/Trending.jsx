@@ -9,7 +9,7 @@ const Trending = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/")
+    fetch("https://toy-shop-server-xi.vercel.app/")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
