@@ -10,33 +10,24 @@
 //   const [dc, setDc] = useState([]);
 //   const [pirates, setPirates] = useState([]);
 
-//   const handleMarvel = () => {};
-//   const handleDc = () => {};
-//   const handlePirates = () => {};
-
 //   useEffect(() => {
 //     fetch("http://localhost:5000/")
 //       .then((res) => res.json())
 //       .then((data) => setAlltoy(data));
+//   }, []);
+
+//   const handleMarvel = () => {
 //     const remaining = alltoy.filter((toy) => toy?.category === "marvel");
 //     setMarvel(remaining);
-//   }, [handleMarvel]);
-
-//   useEffect(() => {
-//     fetch("http://localhost:5000/")
-//       .then((res) => res.json())
-//       .then((data) => setAlltoy(data));
+//   };
+//   const handleDc = () => {
 //     const remaining = alltoy.filter((toy) => toy?.category === "dc");
 //     setDc(remaining);
-//   }, [handleDc]);
-
-//   useEffect(() => {
-//     fetch("http://localhost:5000/")
-//       .then((res) => res.json())
-//       .then((data) => setAlltoy(data));
+//   };
+//   const handlePirates = () => {
 //     const remaining = alltoy.filter((toy) => toy?.category === "pirates");
 //     setPirates(remaining);
-//   }, [handlePirates]);
+//   };
 
 //   return (
 //     <div className="my-[5%] px-[8%] text-white">
@@ -57,7 +48,6 @@
 //               <SingleCard key={product._id} product={product}></SingleCard>
 //             ))}
 //           </div>
-//           <h2>Any content 1</h2>
 //         </TabPanel>
 
 //         {/* panel 2 */}

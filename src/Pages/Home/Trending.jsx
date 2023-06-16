@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import SingleCard from "../../Shared/SingleCard";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Trending = () => {
   const [products, setProducts] = useState([]);
@@ -12,11 +14,20 @@ const Trending = () => {
       .then((data) => setProducts(data));
   }, []);
 
+  useEffect(() => {
+    Aos.init({
+      offset: 200,
+      duration: 600,
+      easing: "ease-in-sine",
+    });
+    Aos.refresh();
+  }, []);
+
   const discountProducts = products.filter((prod) => prod.trending === true);
   console.log(discountProducts);
   console.log(products);
   return (
-    <div className="py-[5%]">
+    <div className="py-[5%]" data-aos="fade-right">
       <p className="text-4xl text-center my-[5%] font-semibold text-gray-500">
         Toys in <span className="text-white font-bold">Trending</span>
       </p>
