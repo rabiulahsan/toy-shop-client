@@ -25,7 +25,7 @@ const Login = () => {
         .then((result) => {
           const user = result.user;
           console.log(user);
-          navigate("/home");
+          navigate("/");
         })
         .catch((error) => {
           console.log(error.message);
