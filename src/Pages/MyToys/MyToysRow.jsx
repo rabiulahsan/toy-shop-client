@@ -18,7 +18,7 @@ const MyToysRow = ({ toy, handleDelete, handleUpdate }) => {
       <td className="">{email}</td>
       <td>
         <span className="cursor-pointer">
-          <Link to={`update/${_id}`}>
+          <Link to={`/update/${_id}`}>
             <button className="button-style" onClick={() => handleUpdate(_id)}>
               Update
             </button>

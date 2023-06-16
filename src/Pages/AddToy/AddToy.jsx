@@ -79,7 +79,6 @@ const AddToy = () => {
               name="toyname"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
-              defaultValue=""
             />
 
             {/* product photo  */}
@@ -104,7 +103,8 @@ const AddToy = () => {
               name="name"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs "
-              defaultValue={user?.displayName}
+              readOnly
+              value={user?.displayName}
             />
 
             {/* seller email  */}
@@ -117,7 +117,8 @@ const AddToy = () => {
               name="email"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs "
-              defaultValue={user?.email}
+              readOnly
+              value={user?.email}
             />
           </div>
           <div className="form-control w-1/2 max-w-xs">

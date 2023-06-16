@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "addtoy",
+        path: "/addtoy",
         element: (
           <PrivateRoute>
             <AddToy></AddToy>
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "mytoys",
+        path: "/mytoys",
         element: (
           <PrivateRoute>
             <MyToys></MyToys>
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "update/:id",
+        path: "/update/:id",
         element: <UpdateToy></UpdateToy>,
         loader: ({ params }) =>
           fetch(`https://toy-shop-server-xi.vercel.app/${params.id}`),
