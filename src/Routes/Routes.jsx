@@ -9,12 +9,14 @@ import ToyDetails from "../Pages/ToyDetails/ToyDetails";
 import Blog from "../Pages/Blog/Blog";
 import AddToy from "../Pages/AddToy/AddToy";
 import MyToys from "../Pages/MyToys/MyToys";
+import UpdateToy from "../Pages/UpdateToy/UpdateToy";
+import ErrorElement from "../Shared/ErrorElement/ErrorElement";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    //   errorElement: <ErrorElement></ErrorElement>,
+    errorElement: <ErrorElement></ErrorElement>,
     children: [
       {
         path: "/",
@@ -42,6 +44,12 @@ const router = createBrowserRouter([
       {
         path: "/mytoys",
         element: <MyToys></MyToys>,
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateToy></UpdateToy>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/update/${params.id}`),
       },
     ],
   },

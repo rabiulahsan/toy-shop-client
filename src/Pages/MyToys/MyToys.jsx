@@ -2,19 +2,19 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyToysRow from "./MyToysRow";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   const [alltoy, setAlltoy] = useState([]);
   useEffect(() => {
-    // fetch(`http://localhost:5000/mytoys?email=${user?.email}`)
     fetch("http://localhost:5000/")
       .then((res) => res.json())
       .then((data) => setAlltoy(data));
     const remaining = alltoy.filter((toy) => toy?.email === user?.email);
     setMyToys(remaining);
-  }, []);
+  }, [user]);
 
   //update function
   // const handleUpdate = (id) => {
@@ -41,21 +41,35 @@ const MyToys = () => {
 
   //delete function
   const handleDelete = (id) => {
-    const proceed = confirm("Are You sure you want to delete");
-    if (proceed) {
-      fetch(`http://localhost:5000/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.deletedCount > 0) {
-            alert("deleted successful");
-            const remaining = myToys.filter((toy) => toy._id !== id);
-            setMyToys(remaining);
-          }
-        });
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
+              const remaining = myToys.filter((toy) => toy._id !== id);
+              setMyToys(remaining);
+            }
+          });
+      }
+    });
+
+    //another way
+    // const proceed = confirm("Are You sure you want to delete");
+    // if (proceed) {
+    // }
   };
 
   console.log(myToys);

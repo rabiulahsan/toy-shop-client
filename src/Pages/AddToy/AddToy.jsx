@@ -54,6 +54,7 @@ const AddToy = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        form.reset();
         Swal.fire({
           position: "top-end",
           icon: "success",
