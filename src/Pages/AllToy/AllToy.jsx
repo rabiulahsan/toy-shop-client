@@ -2,15 +2,20 @@
 
 import { useEffect, useState } from "react";
 import SingleCard from "../../Shared/SingleCard";
+import CardSkeleton from "../../Components/CardSkeleton";
 
 const AllToy = () => {
   const [products, setProducts] = useState([]);
   const [seeAll, setSeeAll] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://toy-shop-server-xi.vercel.app/")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => {
+        setProducts(data);
+        setIsLoading(false);
+      });
   }, []);
 
   const slicedProducts = products.slice(0, 10);
@@ -26,6 +31,8 @@ const AllToy = () => {
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-[5%] mb-[5%]">
+          {isLoading && <CardSkeleton number={8}></CardSkeleton>}
+
           {seeAll
             ? products.map((product) => (
                 <SingleCard key={product._id} product={product}></SingleCard>
